@@ -82,7 +82,7 @@ const CalendarApp = () => {
     setEvents(updateEvents);
     setEventTime({ hours: "00", minutes: "00" });
     setEventText("");
-    showEventPopup(false);
+    setShowEventPopup(false);
     setEditingEvent(null);
   };
 
@@ -154,9 +154,9 @@ const CalendarApp = () => {
               <div className="event-popup-time">Time</div>
               <input
                 type="number"
-                name="minutes"
+                name="hours"
                 min={0}
-                max={24}
+                max={23}
                 className="hours"
                 value={eventTime.hours}
                 onChange={handleTimeChange}
@@ -165,9 +165,9 @@ const CalendarApp = () => {
                 type="number"
                 name="minutes"
                 min={0}
-                max={60}
+                max={59}
                 className="minutes"
-                value={eventText.minutes}
+                value={eventTime.minutes}
                 onChange={handleTimeChange}
               />
             </div>
